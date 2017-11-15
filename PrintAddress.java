@@ -6,6 +6,8 @@ public class PrintAddress {
         
         
         System.out.println("Calayo Nasugbu Batangas");
+        
+        System.out.println("Balitoc Calatagan Batangas");
     }
     
 }
