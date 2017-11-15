@@ -9,6 +9,8 @@ public class FirstJava {
         System.out.println("Jinky Lagrisola");
         System.out.println("Darlene Gatdula");
         
+        System.out.println("Diane Gatdula");
+        
         
         
         
