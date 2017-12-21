@@ -1,147 +1,54 @@
-
+import java.io.*;
 import java.util.HashSet;
-import java.util.Scanner;
-// consolidate all you works here 
-// the result of your works should be in sequence to the problems
-// put comments in your codes so that i can understand the flow of the program
-// Don't forget to take screen shots of your works
-// Scroll down to see the main class and other classes.
-// AGAIN!!! PLEASE AVOID DUPLICATION!
-// GOOD LUCK!!! :-)
-//
-// ------- Problems that you need to code ------
-//
-// 1. Output/Result of program one.
-/*
-        1                                                                                
-        12                                                                               
-        123                                                                              
-        1234                                                                             
-        12345                                                                            
-        123456                                                                           
-        1234567                                                                          
-        12345678                                                                         
-        123456789                                                                        
-        12345678910
-
-    2. Output/Result of program two.
-
-        1                                                                                
-        01                                                                               
-        101                                                                              
-        0101                                                                             
-        10101
-
-    3. Output/Result of program three.
-
-              *                                                                          
-             ***                                                                         
-            *****                                                                        
-           *******                                                                       
-          *********                                                                      
-         ***********                                                                     
-        *************                                                                    
-         ***********                                                                     
-          *********                                                                      
-           *******                                                                       
-            *****                                                                        
-             ***                                                                         
-              *
-
-    4. Output/Result of program four.
-
-              A                                                  
-             ABA                                                 
-            ABCBA                                                
-           ABCDCBA                                               
-          ABCDEDCBA                                              
-         ABCDEFEDCBA                                             
-        ABCDEFGFEDCBA                                            
-         ABCDEFEDCBA                                             
-          ABCDEDCBA                                              
-           ABCDCBA                                               
-            ABCBA                                                
-             ABA                                                 
-              A 
-    
-    5. Write a Java program to find the length of the longest consecutive elements sequence 
-       from a given unsorted array of integers.
-       Sample array: [49, 1, 3, 200, 2, 4, 70, 5] 
-       The longest consecutive elements sequence is [1, 2, 3, 4, 5], therefore the program will 
-       return its length 5.
-    
-    6. Write a Java program to remove the duplicate elements of a given array and return the 
-       new length of the array.
-       Sample array: [20, 20, 30, 40, 50, 50, 50]
-       After removing the duplicate elements the program should return 4 as the new length of the array.
-
-    7. Write a Java program to convert all the characters in a string to lowercase.
-
-    8. Write a Java program to create a character array containing the contents of a string.
-
-    9. Write a Java method to check whether a string is a valid password.
-       
-       Password rules:
-               A password must have at least ten characters.
-               A password consists of only letters and digits.
-               A password must contain at least two digits.
-    
-    10. Displays an n-by-n matrix.
-
-        Expected Output:
-
-        Input a number: 10                                                                         
-
-        1 0 0 1 1 0 0 0 1 1                                                                       
-        0 0 1 0 1 0 1 0 0 0                                                                        
-        0 1 0 1 0 0 0 0 0 1                                                                       
-        1 1 1 0 0 0 0 1 1 1                                                                        
-        1 1 0 1 1 1 0 1 0 0                                                                      
-        1 0 0 0 1 1 0 0 0 0                                                                       
-        0 0 1 0 0 0 0 1 1 1                                                                      
-        1 1 0 1 0 1 0 0 1 0                                                                       
-        0 0 1 0 0 0 0 1 1 0                                                        
-        1 1 1 0 0 1 1 1 1 0
-    
-    11. Write a Java method to find all twin prime numbers less than 150.
-
-        Expected Output:
-
-        (3, 5)                                                   
-        (5, 7)                                                   
-        (11, 13)                                                 
-        (17, 19)                                                 
-        (29, 31)                                                 
-        (41, 43)                                                 
-        (59, 61)                                                 
-        (71, 73) 
-        .....
-
-
-*/
-
-
-public class MainClass{
-    
-     private Scanner in = new Scanner(System.in);
+import java. util.Scanner;
+public class NewClass {
+    private Scanner in = new Scanner(System.in);
      private String text = "";
-        
 
-
-    
-
-    public MainClass() {
+    public NewClass() {
         while (true) {            
             mainMenu();
+            System.out.println("Enter Choice : ");
+            int choice = Integer.parseInt(in.nextLine());
+            if (choice ==1){
+                Problem1();
+            }
+            else if (choice ==2){
+                Problem2();
+            }
+            else if (choice ==3){
+                Problem3();
+            }
+            else if (choice ==4){
+                Problem4();
+            }
+            else if (choice ==5){
+                Problem5();
+            }
+            else if (choice ==6){
+                Problem6();
+            }
+            else if (choice ==7){
+                Problem7();
+            }
+            else if (choice ==8){
+                Problem8();
+            }
+            else if (choice ==9){
+                Problem9();
+            }
+            else if (choice ==10){
+                Problem10();
+            }
+            else if (choice ==11){
+                Problem11();
+            }
+            else if (choice ==12){
+                break;
+            }
         }
     }
-
-}
-
-// these are the classes that need to be instantiated in order to use in main() method
-
-
-class mainMenu{
+     
     public void mainMenu(){
         System.out.println("***********");
         System.out.println("1.Problem1");
@@ -155,10 +62,10 @@ class mainMenu{
         System.out.println("9.Problem9");
         System.out.println("10.Problem10");
         System.out.println("11.Problem11");
+        System.out.println("12.E X I T");
         System.out.println("***********");
     }
-}
-class Problem1{
+    
     public void Problem1(){
     for (int i=1; i<=9; i++){
 
@@ -172,8 +79,6 @@ class Problem1{
 
         }
         }
-}
-class Problem2{
     public void Problem2(){
         int i, j;
    	int count = 1;
@@ -191,9 +96,6 @@ class Problem2{
 		count = 0;
 		}
     }
-}
-
-class Problem3{
     public void Problem3(){
         for (int i = 1; i < 10; i += 2) {
       for (int j = 0; j < 9 - i / 2; j++)
@@ -215,9 +117,7 @@ class Problem3{
       System.out.print("\n");
     }
     }
-}
-    class Problem4{
-        public void Problem4(){
+     public void Problem4(){
             Scanner sc = new Scanner(System.in);
         System.out.println("Input the number: ");
         int n = sc.nextInt();
@@ -264,11 +164,7 @@ class Problem3{
             System.out.println();
         }
     }
-        
-}
-
-    class Problem5{
-        public void Problem5(){
+      public void Problem5(){
         int nums[] = {49, 1, 3, 200, 2, 4, 70, 5};  
 		System.out.println("Original array length: "+nums.length);
 		System.out.print("Array elements are: ");
@@ -299,10 +195,7 @@ class Problem3{
         }
         return longest_sequence_len;
     }
-
-    }
-    class Problem6 {
-        public void Problem6(){
+     public void Problem6(){
             
         int array[] = { 20, 20, 30, 40, 50, 50,  };// array of 6 
             // elements
@@ -335,9 +228,7 @@ class Problem3{
                 System.out.println(array[k]); // printing the values
             }
     }
-    }
-    class Problem7 {
-        public void Problem7(){
+     public void Problem7(){
                        String str = "JAMES ALBERT DELA CRUZ ELISTERIO";
 
         // Convert the above string to all lowercase.
@@ -346,11 +237,8 @@ class Problem3{
         // Display the two strings for comparison.
         System.out.println("Original String: " + str);
         System.out.println("String in lowercase: " + lowerStr);
-        }
-       }
-
-       class Problem8{
-           public void Problem8(){
+     }
+        public void Problem8(){
                 String str = "JAMES ALBERT DELA CRUZ ELISTERIO";
 
         // Convert the above string to a char array.
@@ -359,9 +247,7 @@ class Problem3{
         // Display the contents of the char array.
         System.out.println(arr);
            }
-       }
-       class Problem9{
-           public void Problem9(){
+        public void Problem9(){
                
                Scanner input = new Scanner(System.in);
         System.out.print(
@@ -408,10 +294,7 @@ public static final int PASSWORD_LENGTH = 10;
 
         return (ch >= '0' && ch <= '9');
     }
-
-           }
-       class Problem10 {
-           public void Problem10(){
+public void Problem10(){
                 Scanner in = new Scanner(System.in);
         System.out.print("Input a number: ");
         int n = in.nextInt();
@@ -427,10 +310,7 @@ public static final int PASSWORD_LENGTH = 10;
             System.out.println();
         }
     }
-
-           }
-       class Problem11 {
-           public void Problem11(){
+ public void Problem11(){
                for (int i = 2; i < 100; i++) {
 
             if (is_Prime(i) && is_Prime(i + 2)) {
@@ -449,26 +329,5 @@ public static final int PASSWORD_LENGTH = 10;
         }
         return true;
     }
-    }
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
