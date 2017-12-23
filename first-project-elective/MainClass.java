@@ -355,8 +355,7 @@ class Problem8 {     //promblem 8, Java program creating a character array conta
     }
 }
 
-
-
+//prob9
 
 class Problem9 {                        //the output is password rules
     public static final int PASSWORD_LENGTH = 10;                      
