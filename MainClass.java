@@ -1,3 +1,8 @@
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Scanner;
+
 // consolidate all you works here 
 // the result of your works should be in sequence to the problems
 // put comments in your codes so that i can understand the flow of the program
@@ -121,7 +126,7 @@
 public class MainClass{
 
     public static void main(String[] args) {
-        
+        Problem1 Problem1 = new Problem1();
         
 
 
@@ -133,16 +138,307 @@ public class MainClass{
 
 
 class Problem1{
+    public static void main(String args[])throws IOException { 
+        for(int k=1;k<=10;k++) { 
+            for(int i=1;i<=k;i++) {
+                System.out.print(i);
+            } 
+            System.out.println(); 
+        } 
+    } 
     
 }
 
 class Problem2{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        for (int i = 1; i <= number; i++) {
+            for (int j = 1; j <= i; j++) {
+                if ((i + j) % 2 == 0) {
+                    System.out.print("1 ");
+                } else {
+                    System.out.print("0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
 
 }
 
 class Problem3{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input the number: ");
+        int m = sc.nextInt();
+        int count = 1;
+        int count2 = 1;
+        String s = "*";
+
+        for (int i = 1; i < (m * 2); i++) 
+        {
+            for (int spc = m - count2; spc > 0; spc--)   
+            //print space
+            {
+                System.out.print(" ");
+            }
+            if (i < m) 
+            {
+                count2++;
+            } 
+            else 
+            {
+                count2--;
+            }
+            for (int j = 0; j < count; j++) 
+            {
+                System.out.print(s);//print Character
+                
+            }
+            if (i < m)
+            {
+                count = count + 2;
+            } 
+            else
+            {
+                count = count - 2;
+            }
+            s = "*";
+
+            System.out.println();
+        }
+    }
     
 }
+class Problem4{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input the number: ");
+        int r = sc.nextInt();
+        int count = 1;
+        int count2 = 1;
+        char a = 'A';
+
+        for (int i = 1; i < (r * 2); i++) 
+        {
+            for (int spc = r - count2; spc > 0; spc--)   
+            
+            {
+                System.out.print(" ");
+            }
+            if (i < r) 
+            {
+                count2++;
+            } 
+            else 
+            {
+                count2--;
+            }
+            for (int j = 0; j < count; j++) 
+            {
+                System.out.print(a);
+                if (j < count / 2) 
+                {
+                    a++;
+                } else 
+                {
+                    a--;
+                }
+            }
+            if (i < r)
+            {
+                count = count + 2;
+            } 
+            else
+            {
+                count = count - 2;
+            }
+            a = 'A';
+            System.out.println();
+        }
+    }
+    
+}
+class Problem5{
+    public static void main(String[] args) {
+        int nums[] = {49, 1, 3, 200, 2, 4, 70, 5};  
+		System.out.println("Original array length: "+nums.length);
+		System.out.print("Array elements are: ");
+       for (int i = 0; i < nums.length; i++)
+        {
+            System.out.print(nums[i]+" ");
+        }
+		System.out.println("\nThe new length of the array is: "+longest_sequence(nums));
+			
+    }
+    
+    public static int longest_sequence(int[] nums) {
+      final HashSet<Integer> h_set = new HashSet<Integer>();
+        for (int i : nums) h_set.add(i);
+
+        int longest_sequence_len = 0;
+        for (int i : nums) {
+            int length = 1;
+            for (int j = i - 1; h_set.contains(j); --j) {
+                h_set.remove(j);
+                ++length;
+            }
+            for (int j = i + 1; h_set.contains(j); ++j) {
+                h_set.remove(j);
+                ++length;
+            }
+            longest_sequence_len = Math.max(longest_sequence_len, length);
+        }
+        return longest_sequence_len;
+    }
+    
+}
+class Problem6{
+    public static void main(String[] args) {
+        int nums[] = {20, 20, 30, 40, 50, 50, 50};  
+		System.out.println("Original array length: "+nums.length);
+		System.out.print("Array elements are: ");
+       for (int i = 0; i < nums.length; i++)
+        {
+            System.out.print(nums[i]+" ");
+        }
+		System.out.println("\nThe new length of the array is: "+array_sort(nums));
+			
+    }
+    
+    public static int array_sort(int[] nums) {
+         int index = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[index-1])
+                nums[index++] = nums[i];
+        }
+	  return index;
+    }
+    
+}
+class Problem7{
+    public static void main(String[] args)
+    {
+        String str = "I hAve A nEW BAG";
+
+        // Convert the above string to all lowercase.
+        String lowerStr = str.toLowerCase();
+
+        // Display the two strings for comparison.
+        System.out.println("Original String: " + str);
+        System.out.println("String in lowercase: " + lowerStr);
+    }
+    
+}
+class Problem8{
+    public static void main(String[] args)
+    {
+        String str = "Merry Christmas ^_^";
+
+        // Convert the above string to a char array.
+        char[] arr = str.toCharArray();
+
+        // Display the contents of the char array.
+        System.out.println(arr);
+    }
+    
+}
+class Problem9{
+    public static final int PASSWORD_LENGTH = 8;
+
+public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print(
+                "1. A password must have at least eight characters.\n" +
+                "2. A password consists of only letters and digits.\n" +
+                "3. A password must contain at least two digits \n" +
+                "Input a password (You are agreeing to the above Terms and Conditions.): ");
+        String s = input.nextLine();
+
+        if (is_Valid_Password(s)) {
+            System.out.println("Password is valid: " + s);
+        } else {
+            System.out.println("Not a valid password: " + s);
+        }
+    }
+
+    public static boolean is_Valid_Password(String password) {
+
+        if (password.length() < PASSWORD_LENGTH) return false;
+
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+
+            char ch = password.charAt(i);
+
+            if (is_Numeric(ch)) numCount++;
+            else if (is_Letter(ch)) charCount++;
+            else return false;
+        }
+        return (charCount >= 2 && numCount >= 2);
+    }
+    public static boolean is_Letter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+
+
+    public static boolean is_Numeric(char ch) {
+
+        return (ch >= '0' && ch <= '9');
+    }
+    
+}
+class Problem10{
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Input a number: ");
+        int n = in.nextInt();
+        printMatrix(n);
+    }
+ 
+ public static void printMatrix(int n) {
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                System.out.print((int)(Math.random() * 2) + " ");
+            }
+            System.out.println();
+        }
+    }
+    
+}
+class Problem11{
+    public static void main(String[] args) {
+
+        for (int i = 2; i < 150; i++) {
+
+            if (is_Prime(i) && is_Prime(i + 2)) {
+                System.out.printf("(%d, %d)\n", i, i + 2);
+            }
+        }
+    }
+
+    public static boolean is_Prime(long n) {
+
+        if (n < 2) return false;
+
+        for (int i = 2; i <= n / 2; i++) {
+
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    
+}
+
 
 
 
